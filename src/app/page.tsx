@@ -1,5 +1,10 @@
 import React from "react";
+import { Tools } from "@/components/pages";
 
 export default function Home() {
-  return <div>Welcome to home page</div>;
+  return (
+    <main>
+      <Tools />
+    </main>
+  );
 }
