@@ -1,64 +1,85 @@
 @import "/src/styles/utils";
 
 .tools_section {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  &__header {
-    margin-bottom: 20vh;
-    &__main {
-    }
-    &__sub {
-    }
-  }
-  &__list {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    gap: 1.5rem;
-    padding: 0 100px 100px;
-    &__item {
-      border: 1px solid var(--border-color-1);
-      border-radius: 8px;
-      transform: translateY(20px);
-      opacity: 0;
-      transition: all 0.5s ease;
-      padding: 10px;
-      width: 100%;
-      aspect-ratio: 1;
-      display: flex;
+  // border: 1px solid red;
+  .tools {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--padding-section);
+    // border: 1px solid blue;
+    &__header {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       align-items: center;
-      justify-content: center;
-      box-shadow: var(--box-shadow-1);
-      position: relative;
-      overflow: hidden;
-      &::after {
-        position: absolute;
-        content: "";
+      gap: 2rem;
+      margin-bottom: 3rem;
+      &__main {
+        font-size: fontSize(3xl);
+        font-weight: 700;
+        line-height: 1.2;
+        color: color(secondary, 100);
+        transform: translateY(20px);
+        opacity: 0;
+        webkit-mask-image: linear-gradient(transparent, black);
+        mask-image: linear-gradient(transparent, black);
+        transition: all 1s ease;
+      }
+      &__sub {
+        font-size: fontSize(lg);
+        line-height: 1.4;
+        transform: translateY(20px);
+        opacity: 0;
+        webkit-mask-image: linear-gradient(transparent, black);
+        mask-image: linear-gradient(transparent, black);
+        transition: all 1s ease;
+        & > p {
+          margin-bottom: 0.89em;
+          color: color(secondary, 200);
+          font-weight: normal;
+        }
+        & > a {
+          color: color(primary, 100);
+          text-decoration: none;
+          font-weight: 500;
+          &:hover {
+            color: color(secondary, 100);
+          }
+        }
+      }
+    }
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      gap: 1.5rem;
+      &__item {
+        border: 1px solid var(--border-color-1);
+        border-radius: 8px;
+        transform: translateY(20px);
+        opacity: 0;
+        padding: 10px;
         width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 1),
-          rgba(255, 255, 255, 0.75),
-          rgba(255, 255, 255, 0.5),
-          rgba(255, 255, 255, 0.25),
-          rgba(255, 255, 255, 0)
-        );
-        opacity: var(--opacity, 1);
-        transition: opacity 2s ease;
-      }
-      &:hover {
-        scale: 1.125;
-        border: 1px solid var(--border-color-hover-1);
-      }
-      & > figure {
-        position: relative;
-        width: 70%;
         aspect-ratio: 1;
-        img {
-          object-fit: contain;
-          object-position: center center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--box-shadow-1);
+        position: relative;
+        overflow: hidden;
+        webkit-mask-image: linear-gradient(transparent, black);
+        mask-image: linear-gradient(transparent, black);
+        transition: all 0.5s ease;
+        &:hover {
+          scale: 1.125;
+          border: 1px solid var(--border-color-hover-1);
+        }
+        & > figure {
+          position: relative;
+          width: 70%;
+          aspect-ratio: 1;
+          img {
+            object-fit: contain;
+            object-position: center center;
+          }
         }
       }
     }

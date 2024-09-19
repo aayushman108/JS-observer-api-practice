@@ -1,1 +1,1 @@
-export * from "./home/tools/tools.component";
+export * from "./home";

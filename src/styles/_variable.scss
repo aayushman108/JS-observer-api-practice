@@ -1,15 +1,21 @@
 :root {
-  --max-width: 1290px;
+  --max-width: 1340px;
+  --padding-section: 20px;
   --border-radius: 12px;
   // color-primary
-  --color-primary-100: #4da2ff;
-  --color-primary-200: #268eff;
-  --color-primary-300: #007bff;
+  --color-primary-100: rgb(0, 107, 255);
+  --color-primary-200: rgb(0, 78, 186);
 
   // color-secondary
-  --color-secondary-100: #03f703;
-  --color-secondary-200: #05c405;
-  --color-secondary-300: #029602;
+  --color-secondary-100: rgb(11, 53, 88);
+  --color-secondary-200: rgb(71, 103, 136);
+
+  // general-color
+  --primary-color: rgb(0, 107, 255);
+  --secondary-color: rgb(11, 53, 88);
+  --success-color: #03f703;
+  --info-color: #fff000;
+  --danger-color: #dc3545;
 
   // background-color
   --background-color-100: #ffffff;
@@ -21,12 +27,6 @@
   --color-200: #1f1e1e;
   --color-300: #0a0a0a;
 
-  --primary-color: #007bff;
-  --secondary-color: #029602;
-  --success-color: #03f703;
-  --info-color: #fff000;
-  --danger-color: #dc3545;
-
   //border
   --border-color-1: rgb(212, 224, 237);
   --border-color-hover-1: rgb(0, 107, 255);
@@ -37,14 +37,15 @@
     rgba(71, 103, 136, 0.05) 0px 10px 20px 0px;
 
   // font sizes
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
+  --font-size-xs: 0.5rem;
+  --font-size-sm: 0.75rem;
   --font-size-md: 1rem;
   --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-2xl: 1.5rem;
-  --font-size-3xl: 1.875rem;
-  --font-size-4xl: 2.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 1.75rem;
+  --font-size-3xl: 3.125rem;
+  --font-size-4xl: 4.25rem;
+  --font-size-5xl: 5rem;
 
   // Responsive font sizes
   --responsive-font-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);

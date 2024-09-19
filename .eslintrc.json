@@ -69,7 +69,7 @@
      "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
 
-    "import/no-unresolved": ["error", {"commonjs": true, "amd": true}],
+    "import/no-unresolved": ["error", {"commonjs": true, "amd": true, "ignore": [".svg"]}],
     "import/named": "error",
     "import/namespace": "warn",
     "import/default": "warn",

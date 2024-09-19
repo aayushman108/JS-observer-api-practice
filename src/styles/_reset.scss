@@ -44,7 +44,6 @@ a {
   text-decoration-thickness: from-font;
   text-underline-offset: 0.2em;
   color: inherit;
-
   &:not([class]) {
     text-decoration-skip-ink: auto;
   }
