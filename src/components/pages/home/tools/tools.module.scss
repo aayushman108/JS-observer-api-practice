@@ -4,6 +4,7 @@
   // border: 1px solid red;
   .tools {
     max-width: var(--max-width);
+    width: 100%;
     margin: 0 auto;
     padding: var(--padding-section);
     // border: 1px solid blue;
@@ -22,7 +23,8 @@
         opacity: 0;
         webkit-mask-image: linear-gradient(transparent, black);
         mask-image: linear-gradient(transparent, black);
-        transition: all 1s ease;
+        transition: 1s ease;
+        transition-property: transform opacity;
       }
       &__sub {
         font-size: fontSize(lg);
@@ -31,7 +33,8 @@
         opacity: 0;
         webkit-mask-image: linear-gradient(transparent, black);
         mask-image: linear-gradient(transparent, black);
-        transition: all 1s ease;
+        transition: 1s ease;
+        transition-property: transform opacity;
         & > p {
           margin-bottom: 0.89em;
           color: color(secondary, 200);

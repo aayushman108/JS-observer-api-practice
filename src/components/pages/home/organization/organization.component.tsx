@@ -16,7 +16,7 @@ export function Organization() {
               className={styles.organization_list__item}
               style={{
                 animationDelay: `${
-                  (45 / length) * (length - i - 1) * -1 + 0.5
+                  (30 / length) * (length - i - 1) * -1 + 0.5
                 }s`,
               }}
             >

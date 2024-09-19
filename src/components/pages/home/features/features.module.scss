@@ -1,0 +1,46 @@
+@import "/src/styles/utils";
+
+.features_section {
+  max-width: 100vw;
+  width: 100%;
+  // border: 2px solid green;
+  .features {
+    max-width: var(--max-width);
+    width: 100%;
+    padding: var(--padding-section);
+    margin: 10rem auto 0;
+    &__header {
+      max-width: 996px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      // border: 2px solid red;
+      & > * {
+        transform: translateY(40px);
+        opacity: 0;
+        transition: 1s ease;
+        transition-property: transform opacity;
+      }
+      &__main {
+        font-size: fontSize(5xl);
+        color: color(secondary, 100);
+        line-height: 1.2;
+        font-weight: 700;
+        text-align: center;
+        // border: 1px solid blue;
+        overflow: visible;
+      }
+      &__sub {
+        & > p {
+          font-size: fontSize(xl);
+          color: color(secondary, 200);
+          text-align: center;
+          // border: 1px solid red;
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Features,
   HomeComponentsContainer,
   Organization,
   Tools,
@@ -7,8 +8,9 @@ import {
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ maxWidth: "100vw", width: "100%" }}>
       <HomeComponentsContainer>
+        <Features />
         <Tools />
         <Organization />
       </HomeComponentsContainer>

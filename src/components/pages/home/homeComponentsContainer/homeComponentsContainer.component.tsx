@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import styles from "../tools/tools.module.scss";
 
 interface IProps {
   children: React.ReactNode;
@@ -13,15 +12,13 @@ export function HomeComponentsContainer(props: IProps) {
   const timeoutIdsRef = useRef<number[]>([]);
 
   useEffect(() => {
-    const liItem = document.querySelectorAll(`ul li`);
-    const headerItem = document.querySelectorAll(`header > *`);
-
     const options = {
       threshold: 0,
     };
     const callback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          const liItem = Array.from(entry.target.children);
           liItem.forEach((item, i) => {
             const timeoutId = window.setTimeout(() => {
               const targetElement = item as HTMLElement;
@@ -33,6 +30,7 @@ export function HomeComponentsContainer(props: IProps) {
 
             timeoutIdsRef.current.push(timeoutId);
           });
+          const headerItem = Array.from(entry.target.children);
           headerItem.forEach((item, i) => {
             const timeoutId = window.setTimeout(() => {
               const targetElement = item as HTMLElement;
@@ -91,5 +89,7 @@ export function HomeComponentsContainer(props: IProps) {
       timeoutIdsRef.current = [];
     };
   }, []);
-  return <div>{props.children}</div>;
+  return (
+    <div style={{ maxWidth: "100vw", width: "100%" }}>{props.children}</div>
+  );
 }
