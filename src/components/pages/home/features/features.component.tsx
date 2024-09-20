@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "@/components/Button/button.component";
 import styles from "./features.module.scss";
 
 export function Features() {
@@ -23,7 +24,7 @@ export function Features() {
               the Fortune 500 companies.
             </p>
           </div>
-          <button>Sign up for free</button>
+          <Button style={{ border: "2px solid red" }}>Sign up for free</Button>
         </header>
         <div></div>
       </div>
