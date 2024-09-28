@@ -1,8 +1,18 @@
-import React from "react";
+"use client";
+import React, { FormEvent } from "react";
 import { Button } from "@/components/Button/button.component";
+import { FEATURES } from "@/constant/features.constant";
+import { FeatureCard } from "./featureCard/featureCard.component";
 import styles from "./features.module.scss";
+import { useFeatures } from "./featuresProvider/featuresProvider.component";
 
 export function Features() {
+  const { handleChangeActiveFeature } = useFeatures();
+
+  const handleClick = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    alert("Form submitted");
+  };
   return (
     <section
       id="home_features"
@@ -24,9 +34,29 @@ export function Features() {
               the Fortune 500 companies.
             </p>
           </div>
-          <Button style={{ border: "2px solid red" }}>Sign up for free</Button>
+          <form onSubmit={handleClick}>
+            <Button type="submit" className="primary" text="Sign up for free" />
+          </form>
         </header>
-        <div></div>
+        <div className={styles.features__content}>
+          <ul className={styles.features__content__list}>
+            {FEATURES.map((feature, i) => {
+              return (
+                <li
+                  key={i}
+                  onClick={() => {
+                    handleChangeActiveFeature(i + 1);
+                  }}
+                >
+                  <FeatureCard card={feature} />
+                </li>
+              );
+            })}
+          </ul>
+          <div className={styles.features__content__image}>
+            <figure></figure>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,17 +1,35 @@
-import React, { CSSProperties, ForwardedRef, forwardRef } from "react";
+import React, { ButtonHTMLAttributes, ForwardedRef, forwardRef } from "react";
+import styles from "./button.module.scss";
 
-interface IProps {
-  style?: CSSProperties;
-  type?: "submit" | "reset" | "button";
-}
+interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  text?: string;
+  preIcon?: React.ReactNode;
+  postIcon?: React.ReactNode;
+  isLoading?: boolean;
+} //onClick, disabled, type, className, style
 
 const renderButton = (
-  { children, type = "submit", ...props }: React.PropsWithChildren<IProps>,
+  {
+    children,
+    text,
+    preIcon,
+    postIcon,
+    isLoading,
+    className,
+    ...props
+  }: React.PropsWithChildren<IProps>,
   ref: ForwardedRef<HTMLButtonElement>
 ) => {
   return (
-    <button ref={ref} type={type} {...props}>
-      {children}
+    <button
+      ref={ref}
+      className={`${styles.custom_button} ${className && styles[className]}`}
+      {...props}
+    >
+      {preIcon && <span>{preIcon}</span>}
+      <span>{text || children}</span>
+      {postIcon && <span>{postIcon}</span>}
+      {isLoading && <span>Loading...</span>}
     </button>
   );
 };

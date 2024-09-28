@@ -14,27 +14,21 @@
       align-items: center;
       gap: 2rem;
       margin-bottom: 3rem;
+      transform: translateY(40px);
+      opacity: 0;
+      webkit-mask-image: linear-gradient(transparent, black);
+      mask-image: linear-gradient(transparent, black);
+      transition: 1s ease;
+      transition-property: transform opacity;
       &__main {
         font-size: fontSize(3xl);
         font-weight: 700;
         line-height: 1.2;
         color: color(secondary, 100);
-        transform: translateY(20px);
-        opacity: 0;
-        webkit-mask-image: linear-gradient(transparent, black);
-        mask-image: linear-gradient(transparent, black);
-        transition: 1s ease;
-        transition-property: transform opacity;
       }
       &__sub {
         font-size: fontSize(lg);
         line-height: 1.4;
-        transform: translateY(20px);
-        opacity: 0;
-        webkit-mask-image: linear-gradient(transparent, black);
-        mask-image: linear-gradient(transparent, black);
-        transition: 1s ease;
-        transition-property: transform opacity;
         & > p {
           margin-bottom: 0.89em;
           color: color(secondary, 200);

@@ -1,0 +1,17 @@
+@import "/src/styles/utils";
+.feature_card {
+  &__btn {
+    border: none;
+    background-color: transparent;
+    color: color(secondary, 200);
+    &.active {
+      color: color(secondary, 100);
+    }
+  }
+  &__content {
+    color: color(secondary, 200);
+    &__div {
+      padding: 1.5rem 0;
+    }
+  }
+}

@@ -43,3 +43,7 @@
 @function background-color($shade) {
   @return var(--background-color-#{$shade});
 }
+
+@function border-radius($size) {
+  @return var(--border-radius-#{$size});
+}

@@ -13,9 +13,14 @@
   // general-color
   --primary-color: rgb(0, 107, 255);
   --secondary-color: rgb(11, 53, 88);
+  --white-color: rgba(255, 255, 255, 1);
   --success-color: #03f703;
   --info-color: #fff000;
   --danger-color: #dc3545;
+
+  //button
+  --button-primary: rgb(0, 107, 255);
+  --button-primary-hover: rgb(0, 78, 186);
 
   // background-color
   --background-color-100: #ffffff;
@@ -49,6 +54,13 @@
 
   // Responsive font sizes
   --responsive-font-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+
+  //border-radius
+  --border-radius-xs: 2px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 8px;
+  --border-radius-xl: 10px;
 }
 
 [data-theme="dark"] {
