@@ -39,15 +39,33 @@
       }
     }
     &__content {
+      margin: 4rem 0;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
       &__list {
-        border: 1px solid blue;
+        list-style-type: none;
       }
       &__image {
-        border: 1px solid green;
+        width: 100%;
+        border: 2px solid slategray;
+        position: relative;
       }
     }
+  }
+}
+
+@keyframes motion {
+  0% {
+    top: 40%;
+    left: 0;
+  }
+  60% {
+    top: -20%;
+    left: 5%;
+  }
+  100% {
+    top: 40%;
+    left: 0;
   }
 }

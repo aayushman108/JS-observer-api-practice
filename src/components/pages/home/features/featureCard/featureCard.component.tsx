@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Progressbar } from "@/components/progressbar/progressbar.component";
+import { FEATURES } from "@/constant/features.constant";
 import { useFeatures } from "../featuresProvider/featuresProvider.component";
 import styles from "./featureCard.module.scss";
 
@@ -48,8 +49,13 @@ export function FeatureCard(props: IProps) {
         {props.card.title}
       </button>
       <div
-        className={styles.feature_card__content}
-        style={{ height: contentHeight, overflowY: "hidden" }}
+        className={`${styles.feature_card__content} ${
+          activeFeature === props.card.id && styles.active
+        }`}
+        style={{
+          height: contentHeight,
+          overflowY: "hidden",
+        }}
       >
         <div
           ref={contentRef}
@@ -57,7 +63,12 @@ export function FeatureCard(props: IProps) {
           className={styles.feature_card__content__div}
         />
       </div>
-      {activeFeature === props.card.id && <Progressbar active={activeClick} />}
+      {activeFeature === props.card.id && (
+        <Progressbar
+          active={activeClick}
+          lastCard={props.card.id === FEATURES.length}
+        />
+      )}
     </article>
   );
 }
